@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // Button.test.jsx - Unit test for Button component
 
 import React from 'react';
@@ -57,7 +58,7 @@ describe('Button Component', () => {
 
   // Test click handler
   it('calls onClick handler when clicked', () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
     render(<Button onClick={handleClick}>Click me</Button>);
     const button = screen.getByRole('button', { name: /click me/i });
     
@@ -67,7 +68,7 @@ describe('Button Component', () => {
 
   // Test that disabled button doesn't call onClick
   it('does not call onClick when disabled', () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
     render(<Button onClick={handleClick} disabled>Click me</Button>);
     const button = screen.getByRole('button', { name: /click me/i });
     
