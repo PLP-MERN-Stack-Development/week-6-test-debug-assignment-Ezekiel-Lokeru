@@ -1,88 +1,178 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19930094&assignment_repo_type=AssignmentRepo)
-# Testing and Debugging MERN Applications
+# 🚀 MERN Testing Project
 
-This assignment focuses on implementing comprehensive testing strategies for a MERN stack application, including unit testing, integration testing, and end-to-end testing, along with debugging techniques.
+A full-stack MERN application built with a focus on clean architecture, professional testing practices, and modular design.
 
-## Assignment Overview
+---
 
-You will:
-1. Set up testing environments for both client and server
-2. Write unit tests for React components and server functions
-3. Implement integration tests for API endpoints
-4. Create end-to-end tests for critical user flows
-5. Apply debugging techniques for common MERN stack issues
+## 💡 Tech Stack
 
-## Project Structure
+- **MongoDB** — Document database
+- **Express.js** — Backend API framework
+- **React** — Frontend UI library
+- **Node.js** — Server runtime
+- **Vitest** + **React Testing Library** — Frontend unit & integration tests
+- **Supertest** + **Jest** — Backend integration tests
+- **Cypress** — End-to-end (E2E) tests (optional)
+
+---
+
+## 📁 Project Structure
 
 ```
 mern-testing/
-├── client/                 # React front-end
-│   ├── src/                # React source code
-│   │   ├── components/     # React components
-│   │   ├── tests/          # Client-side tests
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/     # Reusable React components
+│   │   │   ├── Button.jsx
+│   │   │   └── Posts.jsx
+│   │   ├── tests/
 │   │   │   ├── unit/       # Unit tests
+│   │   │   │   ├── Button.test.jsx
+│   │   │   │   └── Posts.test.jsx
 │   │   │   └── integration/ # Integration tests
-│   │   └── App.jsx         # Main application component
-│   └── cypress/            # End-to-end tests
-├── server/                 # Express.js back-end
-│   ├── src/                # Server source code
-│   │   ├── controllers/    # Route controllers
-│   │   ├── models/         # Mongoose models
-│   │   ├── routes/         # API routes
-│   │   └── middleware/     # Custom middleware
-│   └── tests/              # Server-side tests
-│       ├── unit/           # Unit tests
-│       └── integration/    # Integration tests
-├── jest.config.js          # Jest configuration
-└── package.json            # Project dependencies
+│   │   │       └── App.test.jsx
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── setupTests.js
+│   └── cypress/            # E2E tests (optional)
+├── server/
+│   ├── models/
+│   │   ├── Post.js
+│   │   └── User.js
+│   ├── routes/
+│   │   └── postRoutes.js
+│   ├── middleware/
+│   │   └── auth.js
+│   ├── utils/
+│   │   └── auth.js
+│   ├── app.js
+│   └── server.js
+├── .env
+├── package.json
+└── README.md
 ```
 
-## Getting Started
+---
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week6-Assignment.md` file
-4. Explore the starter code and existing tests
-5. Complete the tasks outlined in the assignment
+## ⚙️ Setup Instructions
 
-## Files Included
+### 1️⃣ Clone the repository
 
-- `Week6-Assignment.md`: Detailed assignment instructions
-- Starter code for a MERN application with basic test setup:
-  - Sample React components with test files
-  - Express routes with test files
-  - Jest and testing library configurations
-  - Example tests for reference
+```bash
+git clone https://github.com/yourusername/mern-testing.git
+cd mern-testing
+```
 
-## Requirements
+### 2️⃣ Install backend dependencies
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Basic understanding of testing concepts
+```bash
+pnpm install
+```
 
-## Testing Tools
+### 3️⃣ Setup environment variables
 
-- Jest: JavaScript testing framework
-- React Testing Library: Testing utilities for React
-- Supertest: HTTP assertions for API testing
-- Cypress/Playwright: End-to-end testing framework
-- MongoDB Memory Server: In-memory MongoDB for testing
+Create a `.env` file in the root of the project:
 
-## Submission
+```
+MONGODB_URI=mongodb://localhost:27017/mern-testing
+JWT_SECRET=your_jwt_secret
+PORT=5000
+```
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+### 4️⃣ Install frontend dependencies
 
-1. Complete all required tests (unit, integration, and end-to-end)
-2. Achieve at least 70% code coverage for unit tests
-3. Document your testing strategy in the README.md
-4. Include screenshots of your test coverage reports
-5. Demonstrate debugging techniques in your code
+```bash
+cd client
+pnpm install
+```
 
-## Resources
+---
 
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
-- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
-- [Supertest Documentation](https://github.com/visionmedia/supertest)
-- [Cypress Documentation](https://docs.cypress.io/)
-- [MongoDB Testing Best Practices](https://www.mongodb.com/blog/post/mongodb-testing-best-practices) 
+## 🏃 Running the Application
+
+### Start backend
+
+```bash
+pnpm run dev
+```
+
+> Server runs at: **http://localhost:5000**
+
+### Start frontend
+
+```bash
+cd client
+pnpm dev
+```
+
+> Frontend runs at: **http://localhost:5173** (default Vite port)
+
+---
+
+## ✅ Running Tests
+
+### Backend tests
+
+```bash
+pnpm test
+```
+
+### Frontend tests
+
+```bash
+cd client
+pnpm test
+```
+
+---
+
+## 🌟 Features
+
+- 🛡 JWT-based authentication
+- 📝 CRUD for posts
+- 🗂 Category filtering for posts
+- 💥 Backend integration tests using Supertest + Jest
+- 🔬 Frontend unit & integration tests using Vitest + React Testing Library
+- 🧪 (Optional) End-to-end tests with Cypress
+- 💅 Reusable, styled Button component
+- ✅ Professional folder structure
+
+---
+
+## 🚀 Future Improvements
+
+- [ ] Add Cypress E2E tests
+- [ ] Add global error boundaries on frontend
+- [ ] Add file uploads or image support for posts
+
+---
+
+## 💙 Author
+
+**Ezekiel Lokeru** — (https://github.com/Ezekiel-Lokeru)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. Feel free to use, modify, and share!
+
+---
+
+## 🖼 Screenshots (Optional)
+
+_Add screenshots of your UI here to showcase it visually._
+
+---
+
+## 🌐 Deployment (Optional)
+
+_You can deploy your frontend to Vercel or Netlify and backend to Render or Railway._
+
+---
+
+## ⭐️ Show your support
+
+If you like this project, please give it a ⭐️ on GitHub!
+
+---
